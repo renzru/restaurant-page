@@ -77,4 +77,57 @@ a {
     margin: 0 auto;
     margin-top: 15rem;
     filter: saturate(1.125);
+    transition: all 0.25s ease;
+}
+
+.cover__chicken:hover {
+    animation: shake 0.5s ease;
+}
+
+/* Utilities */
+
+.no-select {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+@keyframes shake {
+    0% {
+        transform: rotate(0);
+    }
+
+    15% {
+        transform: rotate(5deg);
+    }
+
+    30% {
+        transform: rotate(-5deg) scale(1.125);
+    }
+
+    45% {
+        transform: rotate(4deg);
+    }
+
+    60% {
+        transform: rotate(-4deg);
+    }
+
+    75% {
+        transform: rotate(2deg);
+    }
+
+    85% {
+        transform: rotate(-2deg);
+    }
+
+    92% {
+        transform: rotate(1deg);
+    }
+
+    100% {
+        transform: rotate(0);
+    }
 }
