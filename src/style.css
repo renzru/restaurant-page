@@ -1,10 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&family=Poppins:ital,wght@0,200;0,600;0,900;1,400&display=swap');
+
 :root {
-    --textBlack: #252525;
+    --text-black: #252525;
+    --drop-shadow: 0px 5px 2.5px rgb(0, 0, 0, 0.5);
 }
 
 * {
-    color: var(--textBlack);
-    font-family: Roboto;
+    color: var(--text-black);
+    font-family: 'Roboto';
 }
 
 body {
@@ -21,7 +24,6 @@ nav {
         'logo links user';
     align-items: center;
     gap: 1.25rem;
-    border: 1px solid black;
 }
 
 .logo {
@@ -49,6 +51,7 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #ffdc3e;
 }
 
 .cover__heading {
@@ -56,18 +59,23 @@ a {
     justify-content: center;
 }
 
+.cover__heading>* {
+    font-family: 'Poppins';
+}
+
 .cover__heading h1 {
     font-size: 25rem;
-    font-weight: bolder;
+    font-weight: 900;
     line-height: 0;
+    letter-spacing: -1rem;
 }
 
 .cover__heading p {
     position: absolute;
     margin: 0 auto;
-    margin-top: 5rem;
-    font-size: 1.25rem;
-    font-weight: lighter;
+    margin-top: 2.75rem;
+    font-size: 1.75rem;
+    font-weight: 200;
     white-space: nowrap;
 }
 
@@ -75,30 +83,17 @@ a {
     position: absolute;
     z-index: 1;
     margin: 0 auto;
-    margin-top: 15rem;
-    filter: saturate(1.125);
-    transition: all 0.25s ease;
+    margin-top: 11.5rem;
+    filter: saturate(1.125) drop-shadow(var(--drop-shadow));
 }
 
 .cover__chicken:hover {
     animation: shake 0.5s ease;
 }
 
-/* Utilities */
-
-.no-select {
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -o-user-select: none;
-    user-select: none;
-}
+/* Keyframes */
 
 @keyframes shake {
-    0% {
-        transform: rotate(0);
-    }
-
     15% {
         transform: rotate(5deg);
     }
@@ -123,11 +118,17 @@ a {
         transform: rotate(-2deg);
     }
 
-    92% {
+    90% {
         transform: rotate(1deg);
     }
+}
 
-    100% {
-        transform: rotate(0);
-    }
+/* Utilities */
+
+.no-select {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
 }
