@@ -3,3 +3,4 @@ tsconfig.json
 .eslintrc.json
 .vscode
 .hintrc
+preload.html
