@@ -1,0 +1,43 @@
+:root {
+    --textBlack: #252525;
+}
+
+* {
+    color: var(--textBlack);
+    font-family: Roboto;
+}
+
+body {
+    display: grid;
+    grid-auto-rows: max-content;
+}
+
+nav {
+    display: grid;
+    grid-template-columns: max-content 1fr max-content;
+    grid-template-areas:
+        'logo links user';
+    align-items: center;
+    gap: 1.25rem;
+    border: 1px solid black;
+}
+
+.logo {
+    width: 10rem;
+    object-fit: cover;
+}
+
+.nav-tabs {
+    display: flex;
+    gap: 1.75rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+.nav-user {
+    display: flex;
+
+}
