@@ -1,13 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Poiret+One&family=Poppins:ital,wght@0,200;0,600;0,900;1,400&display=swap');
 
 :root {
-    --text-black: #252525;
+    --text-black: #111122;
     --drop-shadow: 0px 5px 2.5px rgb(0, 0, 0, 0.5);
+    --cover: #ffdc3e;
 }
 
 * {
     color: var(--text-black);
-    font-family: 'Roboto';
+    font-family: 'Poppins';
 }
 
 body {
@@ -24,6 +25,7 @@ nav {
         'logo links user';
     align-items: center;
     gap: 1.25rem;
+    background-color: var(--cover);
 }
 
 .logo {
@@ -34,6 +36,7 @@ nav {
 .nav__tabs {
     display: flex;
     gap: 1.75rem;
+    font-weight: 600;
 }
 
 a {
@@ -51,7 +54,7 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #ffdc3e;
+    background-color: var(--cover);
 }
 
 .cover__heading {
