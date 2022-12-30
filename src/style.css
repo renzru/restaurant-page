@@ -16,11 +16,14 @@
 }
 
 body {
-    display: grid;
-    grid-auto-rows: max-content;
-    align-items: center;
-    width: 100vw;
+    min-width: 100vw;
+    min-height: 100vh;
     overflow-x: hidden;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
 }
 
 /* Navbar */
@@ -261,16 +264,15 @@ a {
 /* Review */
 
 .review {
+    flex: 1;
     display: grid;
     justify-content: center;
     grid-auto-rows: max-content;
     background: url(./media/pattern-bg-3d.png);
 }
 
-
 .review__container {
     display: flex;
-    justify-content: center;
 }
 
 .card-container--review {
@@ -323,8 +325,18 @@ a {
     width: 1rem;
 }
 
-.review__customer {}
+/* Footer */
 
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.25s ease;
+}
+
+footer:hover {
+    transform: scale(1.025);
+}
 
 /* Utilities */
 
@@ -332,6 +344,10 @@ a {
 .delivery,
 .review {
     margin: 12.25rem 0;
+}
+
+.review {
+    margin-bottom: 0;
 }
 
 .cards-container {
