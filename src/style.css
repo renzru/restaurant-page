@@ -75,15 +75,14 @@ a {
     justify-content: center;
 }
 
-.cover__heading>* {
-    color: var(--text-black);
+.cover__crispy {
+    width: 100rem;
+    padding: 7.5rem 0;
+    transition: all 0.125s ease;
 }
 
-.cover__heading h1 {
-    font-size: 25rem;
-    font-weight: 900;
-    line-height: 0;
-    letter-spacing: -1rem;
+.cover__crispy:hover {
+    transform: scale(1.025);
 }
 
 .cover__heading p {
@@ -92,6 +91,7 @@ a {
     margin-top: 3.25rem;
     font-size: 1.75rem;
     font-weight: 200;
+    color: var(--text-black);
     white-space: nowrap;
 }
 
@@ -132,7 +132,7 @@ a {
     transform: scale(1.025);
 }
 
-.cover__chicken:hover {
+.cover__chicken:active {
     animation: shake 0.5s ease;
 }
 
