@@ -220,8 +220,6 @@ a {
     display: grid;
     grid-auto-rows: max-content;
     justify-content: center;
-    padding: 2.25rem;
-    margin: 12.5rem 0;
     background: url(./media/pattern-bg-zigzag.png);
 }
 
@@ -246,7 +244,6 @@ a {
     display: grid;
     grid-auto-rows: max-content;
     justify-content: center;
-    padding: 2.25rem;
 }
 
 .cards-container--delivery {
@@ -259,7 +256,35 @@ a {
 }
 
 
+/* Review */
+
+.review {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(./media/pattern-bg-3d.png);
+}
+
+.review__container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas:
+        'review-text review-customer';
+    justify-content: center;
+}
+
+.review__customer {
+    grid-area: review-customer;
+}
+
 /* Utilities */
+
+.featured,
+.delivery,
+.review {
+    padding: 2.25rem;
+    margin: 12.25rem 0;
+}
 
 .cards-container {
     display: grid;
