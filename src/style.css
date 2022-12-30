@@ -238,6 +238,7 @@ a {
     filter: saturate(1.25);
 }
 
+
 /* Delivery */
 
 .delivery {
@@ -259,30 +260,77 @@ a {
 /* Review */
 
 .review {
-    display: flex;
+    display: grid;
     justify-content: center;
-    align-items: center;
+    grid-auto-rows: max-content;
     background: url(./media/pattern-bg-3d.png);
 }
 
+
 .review__container {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-areas:
-        'review-text review-customer';
+    display: flex;
     justify-content: center;
 }
 
-.review__customer {
-    grid-area: review-customer;
+.card-container--review {
+    display: grid;
+    grid-auto-rows: max-content;
+    align-content: center;
+    gap: 2.5rem;
 }
+
+.card--review {
+    grid-template-rows: max-content max-content;
+    justify-content: start;
+    text-align: unset;
+}
+
+.card--review__heading {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: left;
+    gap: 0.5rem;
+    line-height: 0;
+}
+
+.card--review__picture {
+    width: 2.5rem;
+    margin-right: 0.25rem;
+    object-fit: cover;
+    border-radius: 100%;
+}
+
+.card--review__username {
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.card--review__rating {
+    font-weight: 800;
+    font-size: 1.75rem;
+}
+
+.card--review__description {
+    font-weight: 400;
+    color: var(--text-grey);
+}
+
+.card--review__star {
+    width: 1rem;
+}
+
+.review__customer {
+    position: relative;
+    left: 5rem;
+}
+
 
 /* Utilities */
 
 .featured,
 .delivery,
 .review {
-    padding: 2.25rem;
     margin: 12.25rem 0;
 }
 
