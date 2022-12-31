@@ -71,7 +71,7 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: var(--cover) url(./media/pattern-bg.png);
+    background: var(--cover) url(../media/pattern-bg.png);
 }
 
 .cover__heading {
@@ -224,7 +224,7 @@ a {
     display: grid;
     grid-auto-rows: max-content;
     justify-content: center;
-    background: url(./media/pattern-bg-zigzag.png);
+    background: url(../media/pattern-bg-zigzag.png);
 }
 
 .cards-container--featured {
@@ -268,7 +268,7 @@ a {
     display: grid;
     justify-content: center;
     grid-auto-rows: max-content;
-    background: url(./media/pattern-bg-3d.png);
+    background: url(../media/pattern-bg-3d.png);
 }
 
 .review__container {
