@@ -6,20 +6,16 @@ import { getHome } from './home';
 function getNav() {
     const nav = document.createElement('nav');
     const logo = createText('h1', 'FOODO');
-    logo.classList.add('logo', 'no-select');
-
     const tabs = document.createElement('section');
-    tabs.classList.add('nav__tabs');
-    getNavTabs(tabs);
-
     const user = document.createElement('section');
-    user.classList.add('nav__user');
+    
+    getNavTabs(tabs);
     getNavUser(user);
-
-    const list: HTMLElement[] = [logo, tabs, user];
-    list.forEach((element) => {
-        nav.appendChild(element);
-    })
+    
+    logo.classList.add('logo', 'no-select');
+    tabs.classList.add('nav__tabs');
+    user.classList.add('nav__user');
+    nav.append(logo, tabs, user);
 
     return nav;
 }
@@ -29,18 +25,14 @@ function getNavTabs(parent: HTMLElement) {
     const menu = createText('a', 'Menu');
     const about = createText('a', 'About');
 
-    const list: HTMLElement[] = [home, menu, about];
-    list.forEach((tab) => {
-        parent.appendChild(tab);
-    });
+    parent.append(home, menu, about);
 }
 
 function getNavUser(parent: HTMLElement) {
     const signin = createText('h1', 'Sign in');
     const register = createText('h1', 'Register');
 
-    parent.appendChild(signin);
-    parent.appendChild(register);
+   parent.append(signin, register);
 }
 
 function startSite() {
