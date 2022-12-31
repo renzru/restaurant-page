@@ -17,7 +17,7 @@ function getCover() {
     
     const coverHeading = getCoverHeading();
     const priceTag = getCoverPriceTag();
-    const coverProduct = createImage('./src/media/cover-chicken.png', 'cover__chicken');
+    const coverProduct = createImage(data.product_cover[0].src, 'cover__chicken');
     
     cover.classList.add('cover');
     cover.append(coverHeading, priceTag, coverProduct);
@@ -50,7 +50,7 @@ function getCoverPriceTag() {
 function getCoverCard() {
     const coverCard = document.createElement('section');    
     const container = document.createElement('article');
-    const header = createTextNSpan('h1', `${data.cover_product[0].name} <span class="card__price">${data.cover_product[0].price}</span>`);
+    const header = createTextNSpan('h1', `${data.product_cover[0].name} <span class="card__price">${data.product_cover[0].price}</span>`);
 
     const body = getCoverCardBody();
     const actions = getCoverCardActions();
@@ -69,7 +69,7 @@ function getCoverCard() {
 function getCoverCardBody() {
     const body = document.createElement('div');
     const divider = document.createElement('hr');
-    const description = createText('p', data.cover_product[0].description);
+    const description = createText('p', data.product_cover[0].description);
     
     body.classList.add('card__body');
     divider.classList.add('card__divider');
@@ -111,7 +111,7 @@ function getFeaturedContainer() {
     container.classList.add('cards-container', 'cards-container--featured');
 
     for (let i:number = 0; i < totalCards; i++){
-        container.append(getFeaturedCard(data.products[i]));
+        container.append(getFeaturedCard(data.products_featured[i]));
     }
 
     return container;
