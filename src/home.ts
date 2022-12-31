@@ -6,6 +6,7 @@ function getHome() {
     const main = document.createElement('main');
     const cover = getCover();
     const coverCard = getCoverCard();
+    const featured = getFeatured();
 
     main.append(cover, coverCard);
     return main;
@@ -49,7 +50,7 @@ function getCoverPriceTag() {
 function getCoverCard() {
     const coverCard = document.createElement('section');    
     const container = document.createElement('article');
-    const header = createTextNSpan('h1', 'Crispy Honey-Garlic Chicken <span class="card__price">$8.99</span>');
+    const header = createTextNSpan('h1', `${data.cover_product[0].name} <span class="card__price">${data.cover_product[0].price}</span>`);
 
     const body = getCoverCardBody();
     const actions = getCoverCardActions();
@@ -66,10 +67,9 @@ function getCoverCard() {
 
 
 function getCoverCardBody() {
-    const products = data;
     const body = document.createElement('div');
     const divider = document.createElement('hr');
-    const description = createText('p', products.CHG_chicken.description);
+    const description = createText('p', data.cover_product[0].description);
     
     body.classList.add('card__body');
     divider.classList.add('card__divider');
@@ -89,5 +89,31 @@ function getCoverCardActions() {
     actions.append(button);
     return actions;
 }
+
+function getFeatured() {
+    const featured = document.createElement('section');
+    const header = createText('h1', 'FEATURED');
+    const description = createText('p', 'Discover our latest featured products!');
+
+    const container = getFeaturedContainer();
+
+    featured.classList.add('featured');
+    header.classList.add('section__heading');
+    description.classList.add('section__description');
+}
+
+function getFeaturedContainer() {
+    const container = document.createElement('section');
+    const totalCards = 3;
+
+    for (let i:number = 0; i < totalCards; i++){
+        getFeaturedCard(data.products[i])
+    }
+}
+
+function getFeaturedCard(product: object) {
+    
+}
+
 
 export {getHome};
