@@ -1,5 +1,5 @@
 import * as data from './products.json'
-import { createImage, createText } from './utils';
+import { createText, createTextNSpan, createImage } from './utils';
 
 
 function getHome() {
@@ -49,8 +49,8 @@ function getCoverPriceTag() {
 function getCoverCard() {
     const coverCard = document.createElement('section');    
     const container = document.createElement('article');
+    const header = createTextNSpan('h1', 'Crispy Honey-Garlic Chicken <span class="card__price">$8.99</span>');
 
-    const header = createText('h1', 'Crispy Honey-Garlic Chicken $8.99');
     const body = getCoverCardBody();
     const actions = getCoverCardActions();
 
