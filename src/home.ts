@@ -1,5 +1,3 @@
-import './normalize.css'
-import './style.css'
 import * as data from './products.json'
 import { createImage, createText } from './utils';
 
@@ -66,16 +64,6 @@ function getCoverCard() {
     return coverCard;
 }
 
-function getCoverCardActions() {
-    const actions = document.createElement('div');
-    const button = createText('button', 'Add to Basket');
-
-    actions.classList.add('card__actions');
-    button.classList.add('card__purchase');
-
-    actions.append(button);
-    return actions;
-}
 
 function getCoverCardBody() {
     const products = data;
@@ -86,9 +74,20 @@ function getCoverCardBody() {
     body.classList.add('card__body');
     divider.classList.add('card__divider');
     description.classList.add('card__description');
-
+    
     body.append(divider, description);
     return body;
+}
+
+function getCoverCardActions() {
+    const actions = document.createElement('div');
+    const button = createText('button', 'Add to Basket');
+
+    actions.classList.add('card__actions');
+    button.classList.add('card__purchase');
+
+    actions.append(button);
+    return actions;
 }
 
 export {getHome};
