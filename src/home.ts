@@ -8,7 +8,7 @@ function getHome() {
     const coverCard = getCoverCard();
     const featured = getFeatured();
 
-    main.append(cover, coverCard);
+    main.append(cover, coverCard, featured);
     return main;
 }
 
@@ -94,25 +94,49 @@ function getFeatured() {
     const featured = document.createElement('section');
     const header = createText('h1', 'FEATURED');
     const description = createText('p', 'Discover our latest featured products!');
-
     const container = getFeaturedContainer();
 
     featured.classList.add('featured');
     header.classList.add('section__heading');
     description.classList.add('section__description');
+
+    featured.append(header, description, container);
+    return featured;
 }
 
 function getFeaturedContainer() {
     const container = document.createElement('section');
     const totalCards = 3;
+    
+    container.classList.add('cards-container', 'cards-container--featured');
 
     for (let i:number = 0; i < totalCards; i++){
-        getFeaturedCard(data.products[i])
+        container.append(getFeaturedCard(data.products[i]));
     }
+
+    return container;
 }
 
-function getFeaturedCard(product: object) {
+function getFeaturedCard(product: {name: string, price: string, description: string, src: string}) {
+    const card = document.createElement('article');
     
+    const image = createImage(product.src, 'card__image');
+    const header = createTextNSpan('h1', `${product.name}<span class="card__price">${product.price}</span>`);
+    
+    const body = document.createElement('div');    
+    const divider = document.createElement('hr');
+    const description = createText('p', product.description);
+    
+    card.classList.add('card', 'card--featured');
+    header.classList.add('card__header');
+    body.classList.add('card__body');
+    divider.classList.add('card__divider');
+    description.classList.add('card__description');
+
+    body.append(divider,description);
+    card.append(image,header,body);
+
+    return card;
 }
 
 

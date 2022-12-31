@@ -1,5 +1,4 @@
 {
-
     "cover_product": [
         {
             "name": "Crispy Honey-Garlic Chicken",
@@ -12,17 +11,20 @@
         {
             "name": "Tornado Fries",
             "price": "$2.99",
-            "description": "Our classic fries with a delicious and clever twist!"
+            "description": "Our classic fries with a delicious and clever twist!",
+            "src": "./src/media/featured-tornadofries.png"
         },
         {
             "name": "Tornado Fries",
             "price": "$2.99",
-            "description": "Our classic fries with a delicious and clever twist!"
+            "description": "Our classic fries with a delicious and clever twist!",
+            "src": "./src/media/featured-tornadofries.png"
         },
         {
             "name": "Tornado Fries",
             "price": "$2.99",
-            "description": "Our classic fries with a delicious and clever twist!"
+            "description": "Our classic fries with a delicious and clever twist!",
+            "src": "./src/media/featured-tornadofries.png"
         }
     ]
 }
