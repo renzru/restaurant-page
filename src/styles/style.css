@@ -317,7 +317,7 @@ a {
     font-size: 1.75rem;
 }
 
-.card--review__description {
+.card--review__comment {
     font-weight: 400;
     color: var(--text-grey);
 }

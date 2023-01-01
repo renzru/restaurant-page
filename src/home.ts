@@ -8,8 +8,9 @@ function getHome() {
     const coverCard = getCoverCard();
     const featured = getFeatured();
     const delivery = getDelivery();
+    const review = getReview();
 
-    main.append(cover, coverCard, featured, delivery);
+    main.append(cover,coverCard,featured,delivery,review);
     return main;
 }
 
@@ -114,7 +115,7 @@ function getFeaturedContainer() {
     const container = document.createElement('section');
     container.classList.add('cards-container', 'cards-container--featured');
 
-    const totalCards = 3;
+    const totalCards = data.products_featured.length;
 
     for (let i:number = 0; i < totalCards; i++){
         container.append(getFeaturedCard(data.products_featured[i]));
@@ -166,7 +167,7 @@ function getDeliveryContainer() {
     const container = document.createElement('section');
     container.classList.add('cards-container', 'cards-container--delivery');
 
-    const totalCards = 4;
+    const totalCards = data.delivery_apps.length;
 
     for (let i:number = 0; i < totalCards; i++){
         container.append(getDeliveryCard(data.delivery_apps[i].src));
@@ -179,6 +180,54 @@ function getDeliveryCard(src: string) {
     const image = createImage(src, 'delivery__icon');
 
     return image
+}
+
+function getReview() {
+    const review = document.createElement('section');
+    review.classList.add('review');
+
+    const contentContainer = document.createElement('section');
+    contentContainer.classList.add('review__container');
+
+    const cardsContainer = document.createElement('section');
+    cardsContainer.classList.add('card-container--review');
+
+    const totalCards = data.customer_reviews.length;
+
+    for (let i:number = 1; i < totalCards; i++) {
+        cardsContainer.append(getReviewCard(data.customer_reviews[i]));
+    }
+
+    const posterImage = createImage('./src/media/lady-review.png', "review__customer");
+
+    contentContainer.append(cardsContainer, posterImage);
+    review.append(contentContainer);
+
+    return review;
+}
+
+function getReviewCard(review: {name: string, src: string, rating: string, comment: string}){
+    const card = document.createElement('article');
+    card.classList.add('card', 'card--review');
+
+    const header = document.createElement('div');
+    header.classList.add('card--review__heading');
+
+    const customerPic = createImage(review.src, "card--review__picture");
+    const customerName = createText('h1', review.name);
+    customerName.classList.add('card--review__username');
+    const rating = createText('h1', review.rating);
+    rating.classList.add('card--review__rating');
+
+    const starIcon = createImage('./src/media/star.png', "card--review__star");
+
+    header.append(customerPic, customerName, rating, starIcon);
+
+    const customerComment = createText('p', review.comment);
+    customerComment.classList.add('card--review__comment');
+
+    card.append(header, customerComment);    
+    return card;
 }
 
 export {getHome};
