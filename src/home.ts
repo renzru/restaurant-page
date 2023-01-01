@@ -1,4 +1,4 @@
-import * as data from './products.json'
+import * as data from './data.json'
 import { createText, createTextNSpan, createImage } from './utils';
 
 
@@ -7,8 +7,9 @@ function getHome() {
     const cover = getCover();
     const coverCard = getCoverCard();
     const featured = getFeatured();
+    const delivery = getDelivery();
 
-    main.append(cover, coverCard, featured);
+    main.append(cover, coverCard, featured, delivery);
     return main;
 }
 
@@ -143,6 +144,41 @@ function getFeaturedCard(product: {name: string, price: string, description: str
     card.append(image,header,body);
 
     return card;
+}
+
+function getDelivery() {
+    const delivery = document.createElement('section');
+    delivery.classList.add('delivery');
+
+    const header = createText('h1', 'WE DELIVER');
+    header.classList.add('section__heading');
+
+    const description = createText('p', 'Order from your favorite delivery apps!');
+    description.classList.add('section__description');
+
+    const container = getDeliveryContainer();
+
+    delivery.append(header, description, container);
+    return delivery
+}
+
+function getDeliveryContainer() {
+    const container = document.createElement('section');
+    container.classList.add('cards-container', 'cards-container--delivery');
+
+    const totalCards = 4;
+
+    for (let i:number = 0; i < totalCards; i++){
+        container.append(getDeliveryCard(data.delivery_apps[i].src));
+    }
+    
+    return container;
+}
+
+function getDeliveryCard(src: string) {
+    const image = createImage(src, 'delivery__icon');
+
+    return image
 }
 
 export {getHome};
