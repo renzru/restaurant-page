@@ -1,3 +1,9 @@
-import { startSite } from "./site";
+import { getHome } from './home';
+import { getNav } from './nav';
 
-startSite();
+function startSite() {
+    const body = document.body;
+    body.append(getNav(), getHome());
+}
+
+startSite()
