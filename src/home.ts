@@ -194,7 +194,7 @@ function getReview() {
 
     const totalCards = data.customer_reviews.length;
 
-    for (let i:number = 1; i < totalCards; i++) {
+    for (let i:number = 0; i < totalCards; i++) {
         cardsContainer.append(getReviewCard(data.customer_reviews[i]));
     }
 
