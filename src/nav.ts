@@ -19,8 +19,11 @@ function getNav() {
 
 function getNavTabs(parent: HTMLElement) {
     const home = createText('a', 'Home');
+    home.classList.add('home');
     const menu = createText('a', 'Menu');
+    menu.classList.add('menu');
     const about = createText('a', 'About');
+    about.classList.add('about');
 
     parent.append(home, menu, about);
 }
