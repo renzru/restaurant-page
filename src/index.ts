@@ -24,6 +24,7 @@ function loadContent(content: HTMLElement) {
     if (main !== null) {
         body.removeChild(main);
     }
+    
     body.append(content);
 }
 
