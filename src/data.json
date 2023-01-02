@@ -1,0 +1,72 @@
+{
+    "product_cover": [
+        {
+            "name": "Crispy Honey-Garlic Chicken",
+            "price": "$8.99",
+            "description": "Our crispiest and juiciest chicken yet! Made from premium NON-GMO pasture-raised chicken and brushed with our delectable honey-garlic glaze, this is something your tastebuds wouldn't want to miss.",
+            "src": "./src/media/cover-chicken.png"
+        }
+    ],
+    
+    "products_featured": [
+        {
+            "name": "Tornado Fries",
+            "price": "$2.99",
+            "description": "Our classic fries with a delicious and clever twist!",
+            "src": "./src/media/featured-tornadofries.png"
+        },
+        {
+            "name": "Tornado Fries",
+            "price": "$2.99",
+            "description": "Our classic fries with a delicious and clever twist!",
+            "src": "./src/media/featured-tornadofries.png"
+        },
+        {
+            "name": "Tornado Fries",
+            "price": "$2.99",
+            "description": "Our classic fries with a delicious and clever twist!",
+            "src": "./src/media/featured-tornadofries.png"
+        }
+    ],
+
+    "delivery_apps": [
+        {
+            "name": "Uber Eats",
+            "src": "./src/media/ubereats.png"
+        },
+        {
+            "name": "Postmates",
+            "src": "./src/media/postmates.png"
+        },
+        {
+            "name": "Doordash",
+            "src": "./src/media/doordash.png"
+        },
+        {
+            "name": "Grubhub",
+            "src": "./src/media/grubhub.png"
+        }
+    ],
+
+    "customer_reviews": [
+        {
+            "name": "Susanne Peters",
+            "src": "./src/media/susanne.jpg",
+            "rating": "4.8",
+            "comment": "The food here's affordable, delicious, and just keeps making me go back for more! Definitely one of my favorite restaurants."
+        },
+        {
+            "name": "Jennifer Green",
+            "src": "./src/media/jenny.jpg",
+            "rating": "4.9",
+            "comment": "Not only is the food amazing, but so are the staff! They're so hospitable and welcoming, like one big happy family!"
+        },
+        {
+            "name": "Kitty",
+            "src": "./src/media/cat.jpg",
+            "rating": "5.0",
+            "comment": "Meow."
+        }
+    ]
+}
+        
