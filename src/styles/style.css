@@ -53,10 +53,6 @@ nav>* {
     font-weight: 500;
 }
 
-a {
-    text-decoration: none;
-}
-
 .nav__user {
     display: flex;
 }
@@ -342,7 +338,41 @@ footer:hover {
     transform: scale(1.025);
 }
 
+/* Menu */
+
+
+.menu-cover {
+    height: 35rem;
+
+}
+
+.menu {
+    background: url(../media/pattern-bg-3d.png);
+}
+
+.menu__container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+    padding: 2.5rem;
+    gap: 2.5rem;
+}
+
+.card--menu {
+    grid-template-rows: 20rem 1fr max-content;
+    width: unset;
+}
+
+.card--menu__image {
+    width: 85%;
+    justify-self: center;
+    align-self: center;
+}
+
+
 /* Utilities */
+a {
+    text-decoration: none;
+}
 
 .featured,
 .delivery,
